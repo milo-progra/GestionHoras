@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<section>
+    <div class="container-sm">
+        <h1>Servicios <a href="{% url 'agregar_servicio' %}" class="btn btn-primary">Crear servicio</a></h1>
+        <div class="row">
+            {% for servicio in servicios %}
+            <div class="col-sm-6">
+                <div class="card" id="cards">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ servicio.nombre }}</h5>
+                        <p class="card-text">Precio: ${{ servicio.precio }}</p>
+                        <a href="#" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
